@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Evaluating Multilingual Understanding and Reasoning for Large Multimodal Models">
+  <meta name="keywords" content="M4U">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Evaluating Multilingual Understanding and Reasoning for Large Multimodal Models</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script> -->
+  <!-- <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+/Users/panlu/Library/Mobile Documents/com~apple~CloudDocs/ImageMath/visual-mathqa-server/data_final/images
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script> -->
+
+  <link rel="icon" href="./static/images/logo_m4u.png">
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="./static/css/leaderboard.css">
+
+  <!-- <link href="https://unpkg.com/tabulator-tables@5.5.2/dist/css/tabulator_bulma.min.css" rel="stylesheet">
+  <script type="text/javascript" src="https://unpkg.com/tabulator-tables@5.5.2/dist/js/tabulator.min.js"></script> -->
+  <script type="text/javascript" src="static/js/sort-table.js" defer></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/explorer-index.js"></script>
+  <script src="./static/js/question_card.js"></script>
+
+  <script src="./static/js/leaderboard_testmini.js"></script>  
+  <script src="./data/results/output_folders.js" defer></script>
+  <script src="./data/results/model_scores.js" defer></script>
+
+  <script src="./visualizer/data/data_public.js" defer></script>
+
+</head>
+<body>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title is-bold">
+              <img src="static/images/logo_m4u.png" style="width:1em;vertical-align: middle" alt="Logo"/>
+              <span class="m4u" style="vertical-align: middle">M4U-BENCHMARK</span>
+              </h1>
+            <h2 class="subtitle is-3 publication-subtitle">
+              Evaluating Multilingual Understanding and Reasoning for Large Multimodal Models
+              <!-- <br> -->
+              <!-- with GPT-4V, Bard, and Other Large Multimodal Models -->
+            </h2>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                Hongyu Wang,</span>
+              <span class="author-block">
+                Jiayu Xu,</span>
+              <span class="author-block">
+                Senwei Xie,</span>
+              <span class="author-block">
+                <a href="https://vipl.ict.ac.cn/people/_rpwang/">Ruiping Wang</a>,</span>
+                <br>
+              <span class="author-block">
+                Jialin Li,</span>
+              <span class="author-block">
+                Zhaojie Xie,</span>
+              <span class="author-block">
+                Bin Zhang,</span>
+              <span class="author-block">
+                Chuyan Xiong,</span>
+              <span class="author-block">
+                <a href="http://vipl.ict.ac.cn/people/_xlchen/">Xilin Chen</a></span>     
+            </div>
+  
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">Institute of Computing Technology, Chinese Academy of Sciences,</span><br>
+            </div>
+          
+            <!-- <section> -->
+              <!-- <div class="section" id="org-banners" style="display:fle">
+                <a href="https://www.ucla.edu/" target="_blank" rel="external">
+                    <img class="center-block org-banner" src="static/images/ucla.png" style="height:3em">
+                </a>
+                <a href="https://www.washington.edu/" target="blank" class="ext-link">
+                    <img class="center-block org-banner" src="static/images/uw.png" style="height:3em">
+                </a>
+                <a href="https://www.microsoft.com/en-us/research/" target="_blank" rel="external">
+                    <img class="center-block org-banner" src="static/images/microsoft.png" style="height:3em">
+                </a>
+              </div> -->
+            <!-- </section> -->
+  
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <span class="link-block">
+                  <!-- @PAN TODO: change links -->
+                  <a href=""
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href=""
+                     class="external-link button is-normal is-rounded is-dark">
+                  <!-- <a href="https://lupantech.github.io/papers/arxiv23_mathvista.pdf"
+                     class="external-link button is-normal is-rounded is-dark"> -->
+                    <span class="icon">
+                        <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <!-- Video Link. -->
+                <!-- <span class="link-block">
+                  <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="fab fa-youtube"></i>
+                    </span>
+                    <span>Video</span>
+                  </a>
+                </span> -->
+                <!-- Code Link. -->
+                <span class="link-block">
+                  <a href=""
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                    </a>
+                </span>
+                <!-- Dataset Link. -->
+                <span class="link-block">
+                  <a href=""
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <!-- <i class="far fa-images"></i> -->
+                        <p style="font-size:18px">🤗</p>
+                        <!-- 🔗 -->
+                    </span>
+                    <span>Dataset</span>
+                  </a>
+                </span>
+              </div> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+        <!-- <div class="column is-full-width has-text-centered"> -->
+          <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Multilingual multimodal reasoning is a core component in achieving human-level intelligence. However, most existing benchmarks for multilingual multimodal reasoning struggle to differentiate between models of varying performance; even language models without visual capabilities can easily achieve high scores. This leaves a comprehensive evaluation of leading multilingual multimodal models largely unexplored. In this work, we introduce <img src="static/images/logo_m4u.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>
+              <span class="mathvista">M4U</span>, a novel and challenging benchmark for assessing the capability of multi-discipline multilingual multimodal understanding and reasoning. <img src="static/images/logo_m4u.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>
+              <span class="mathvista">M4U</span> contains 8,931 samples covering 64 disciplines across 16 subfields in Science, Engineering, and Healthcare in Chinese, English, and German. Using <img src="static/images/logo_m4u.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>
+              <span class="mathvista">M4U</span>, we conduct extensive evaluations of 21 leading Large Multimodal Models (LMMs) and Large Language Models (LLMs) with external tools. The evaluation results show that the state-of-the-art model, GPT-4o, achieves only 47.6% average accuracy on <img src="static/images/logo_m4u.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>
+              <span class="mathvista">M4U</span>. Additionally, we observe that the leading LMMs exhibit significant language preferences. Our in-depth analysis indicates that leading LMMs, including GPT-4o, suffer performance degradation when prompted with cross-lingual multimodal questions, such as images with key textual information in Chinese while the question is in German. We believe that <img src="static/images/logo_m4u.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>
+              <span class="mathvista">M4U</span> can serve as a crucial tool for systematically evaluating LMMs based on their multilingual multimodal reasoning capabilities and monitoring their development.   
+            </p>
+            <div class="content has-text-centered">
+              <img src="static/images/overview.png" alt="arithmetic reasoning" width="80%"/>
+              <p> A cross-lingual example from <img src="static/images/logo_m4u.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>
+                <span class="mathvista">M4U dataset</span>.
+            </div>
+            <p>
+              Our codes and data are available at <a href="https://huggingface.co/datasets/vipl-vrc/m4u-test/tree/main/data" target="_blank">Hugging Face Dataset</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+      
+  </section>
+
+<!-- DATASET SECTION -->
+<section class="hero is-light is-small">
+  <div class="hero-body has-text-centered">
+    <!-- <h1 class="title is-1 mathvista"><img src="static/images/mathvista.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>MathVista Dataset</h1> -->
+  <h1 class="title is-1 mathvista">
+    <img src="static/images/logo_m4u.png" style="width:1em;vertical-align: middle" alt="Logo"/>
+    <span class="mathvista" style="vertical-align: middle">M4U Dataset</span>
+  </h1>
+  </div>
+</section>
+
+  <section class="section">
+    <div class="container">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Overview</h2>
+          <div class="content has-text-justified">
+            <div class="content has-text-centered">
+              <img src="static/images/stats.png" alt="arithmetic reasoning" width="80%"/>
+              <p> The detailed statistics of <img src="static/images/logo_m4u.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>
+                <span class="mathvista">M4U dataset</span>.
+            </div>
+            <p>
+              To boost the development of multilingual multimodal models, in this work, we introduce  <img src="static/images/logo_m4u.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>
+              <span class="mathvista">M4U</span>, a novel and challenging benchmark for evaluating foundation models on the expert-level multilingual multimodal understanding and reasoning. Specifically, we recruit a team of over 10 college students and graduate students to collect a high-quality data and assess its difficulty and correctness. <img src="static/images/logo_m4u.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>
+              <span class="mathvista">M4U</span> consists of<b> 8,931 multiple choice questions, covering 64 disciplines of 16 subfields from Science, Engineering and Healthcare in Chinese, English and German.</b>. To minimize the risk of data contamination, the samples are collected from college exams, the quizzes of online video lectures. Further a large portion <b> 35% </b> of  <img src="static/images/logo_m4u.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>
+              <span class="mathvista">M4U</span> are written by our team according to the textbooks. 
+            </p>
+            <br>
+            <div class="columns is-centered has-text-centered">
+            <h2 class="title is-3">Statics</h2>
+          </div>
+
+            <div class="content has-text-centered">
+              <img src="static/images/results.png" alt="arithmetic reasoning" width="80%"/>
+            </div>
+            <p> 
+              With  <img src="static/images/logo_m4u.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>
+              <span class="mathvista">M4U</span>, we conduct extensive evaluations for <b>21</b> leading LMMs and LLMs with external tools. The evaluation results show that the state-of-the-art model, <b>GPT-4o</b>, only achieves <b>47.6%</b> average accuracy on M4U. Besides, we observe that the <b>leading LMMs have significant language preferences</b>.
+            </p>
+            <div class="content has-text-centered">
+              <img src="static/images/cross_lingual.jpg" alt="arithmetic reasoning" width="80%"/>
+            </div>
+            <p> 
+              Our <b>in-depth</b> analysis shows that the leading LMMs, including GPT-4o, suffer from the performance degradation when they are <b>prompted with cross-lingual multimodal questions</b>, e.g., the images have key textual information in Chinese, while the question is in English or German.
+            </p>
+            <div class="content has-text-centered">
+              <img src="static/images/type_result.png" alt="arithmetic reasoning" width="80%"/>
+            </div>
+            <p> 
+              We further analyze the impact of different types of visual content and image positions. The experimental results show that <b>GPT-4o</b> significantly outperforms the other models in medical images, and <b>LLaVA-NeXT</b> has difficulty answering questions where images are included in the options.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--/ Abstract. -->
+  </div>
+  </section>
+
+
+  <section class="hero is-light is-small">
+    <div class="hero-body has-text-centered">
+      <!-- <h1 class="title is-1 mathvista"><img src="static/images/mathvista.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>MathVista Dataset</h1> -->
+    <h1 class="title is-1 mathvista">
+      <img src="static/images/logo_m4u.png" style="width:1em;vertical-align: middle" alt="Logo"/>
+      <span class="mathvista" style="vertical-align: middle">Experimental Results</span>
+    </h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-full has-text-centered content">
+          <h2 class="title is-3" id="leaderboard">Leaderboard</h2>
+          <div class="content">
+            <table class="js-sort-table" id="results">
+                <tr>
+                    <td class="js-sort-number"><strong>#</strong></td>
+                    <td class="js-sort-number"><strong>Model</strong></td>
+                    <td class="js-sort-number"><strong>Method</strong></td>
+                    <td class="js-sort-number"><strong>Source</strong></td>
+                    <td class="js-sort-number"><strong>Size</strong></td>
+                    <td class="js-sort-number"><strong>Chinese</strong></td>
+                    <td class="js-sort-number"><strong>English</strong></td>
+                    <td class="js-sort-number"><strong>German</strong></td>
+                    <td class="js-sort-number"><strong>Average</strong></td>
+                </tr>
+                <tr>			
+                  <td>1</td>
+                  <td><b>GPT-4o</b></td>
+                  <td>LMM</td>
+                  <td><a href="https://openai.com/" class="ext-link" style="font-size: 16px;">Link</a></td>
+                  <td>-</td>
+                  <td>47.8</td>
+                  <td>49.4</td>
+                  <td>45.6</td>
+                  <td><b>47.6</b></td>            
+                </tr> 
+                <tr>
+                  <td>2</td>
+                  <td><b>GPT-4V + CoT</b></td>
+                  <td>LMM</td>
+                  <td><a href="https://openai.com/" class="ext-link" style="font-size: 16px;">Link</a></td>
+                  <td>-</td>
+                  <td>43.9</td>
+                  <td>43.6</td>
+                  <td>40.3</td>
+                  <td><b>42.6</b></td>            
+                </tr> 
+                <tr>
+                  <td>3</td>
+                  <td><b>GPT-4V</b></td>
+                  <td>LMM</td>
+                  <td><a href="https://openai.com/" class="ext-link" style="font-size: 16px;">Link</a></td>
+                  <td>-</td>
+                  <td>39.7</td>
+                  <td>39.4</td>
+                  <td>37.3</td>
+                  <td><b>38.8</b></td>            
+                </tr> 
+                <tr>
+                  <td>4</td>
+                  <td><b>LLaVA-NeXT-34B</b></td>
+                  <td>LMM</td>
+                  <td><a href="https://huggingface.co/liuhaotian/llava-v1.6-34b" class="ext-link" style="font-size: 16px;">Link</a></td>
+                  <td>34B</td>
+                  <td>38.5</td>
+                  <td>36.2</td>
+                  <td>35.2</td>
+                  <td><b>36.6</b></td>            
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td><b>Gemini 1.0 Pro + CoT</b></td>
+                  <td>LMM</td>
+                  <td><a href="https://deepmind.google/technologies/gemini/" class="ext-link" style="font-size: 16px;">Link</a></td>
+                  <td>-</td>
+                  <td>34.4</td>
+                  <td>34.2</td>
+                  <td>33.9</td>
+                  <td><b>34.2</b></td>            
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td><b>Gemini 1.0 Pro</b></td>
+                  <td>LMM</td>
+                  <td><a href="https://deepmind.google/technologies/gemini/" class="ext-link" style="font-size: 16px;">Link</a></td>
+                  <td>-</td>
+                  <td>34.9</td>
+                  <td>32.7</td>
+                  <td>30.8</td>
+                  <td><b>32.8</b></td>            
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td><b>Qwen-1.5-14B-Chat + Caption</b></td>
+                  <td>Tool</td>
+                  <td><a href="https://huggingface.co/Qwen/Qwen1.5-14B-Chat" class="ext-link" style="font-size: 16px;">Link</a></td>
+                  <td>14B</td>
+                  <td>32.7</td>
+                  <td>32.0</td>
+                  <td>33.8</td>
+                  <td><b>32.8</b></td>            
+                </tr>   
+                <tr>
+                  <td>8</td>
+                  <td><b>Yi-VL-34B</b></td>
+                  <td>LMM </td>
+                  <td><a href="https://huggingface.co/01-ai/Yi-VL-34B" class="ext-link" style="font-size: 16px;">Link</a></td>
+                  <td>34B</td>
+                  <td>33.5</td>
+                  <td>33.3</td>
+                  <td>30.5</td>
+                  <td><b>32.4</b></td>            
+                </tr>
+                <tr>
+                  <td>9</td>
+                  <td><b>Yi-VL-6B</b></td>
+                  <td>LMM</td>
+                  <td><a href="https://huggingface.co/01-ai/Yi-VL-6B" class="ext-link" style="font-size: 16px;">Link</a></td>
+                  <td>6B</td>
+                  <td>33.4</td>
+                  <td>31.4</td>
+                  <td>29.7</td>
+                  <td><b>31.5</b></td>            
+                </tr>   
+                <tr>
+                  <td>10</td>
+                  <td><b>DeepSeek-VL</b></td>
+                  <td>LMM</td>
+                  <td><a href="https://huggingface.co/deepseek-ai/deepseek-vl-7b-chat" class="ext-link" style="font-size: 16px;">Link</a></td>
+                  <td>7B</td>
+                  <td>30.4</td>
+                  <td>32.8</td>
+                  <td>30.8</td>
+                  <td><b>31.3</b></td>            
+                </tr>
+                <tr>
+                  <td>11</td>
+                  <td><b>Qwen-1.5-7B-Chat + Caption</b></td>
+                  <td>Tool</td>
+                  <td><a href="https://huggingface.co/Qwen/Qwen1.5-7B-Chat" class="ext-link" style="font-size: 16px;">Link</a></td>
+                  <td>7B</td>
+                  <td>34.2</td>
+                  <td>27.7</td>
+                  <td>31.7</td>
+                  <td><b>31.2</b></td>            
+                </tr>
+                <tr>
+                  <td>11</td>
+                  <td><b>Gemini 1.0 Pro + Caption</b></td>
+                  <td>Tool</td>
+                  <td><a href="https://deepmind.google/technologies/gemini/" class="ext-link" style="font-size: 16px;">Link</a></td>
+                  <td>-</td>
+                  <td>31.6</td>
+                  <td>31.1</td>
+                  <td>30.9</td>
+                  <td><b>31.2</b></td>            
+                </tr>
+                <tr>
+                  <td>13</td>
+                  <td><b>InternLM-XComposer</b></td>
+                  <td>LMM</td>
+                  <td><a href="https://github.com/VIPL-MultiModal/cmmmu-private/blob/opensource/internlm/internlm-xcomposer-vl-7b" class="ext-link" style="font-size: 16px;">Link</a></td>
+                  <td>7B</td>
+                  <td>31.8</td>
+                  <td>31.6</td>
+                  <td>29.1</td>
+                  <td><b>30.8</b></td>            
+                </tr>
+                <tr>
+                  <td>14</td>
+                  <td><b>LLaVA-NeXT-Mistral-7B</b></td>
+                  <td>LMM </td>
+                  <td><a href="https://huggingface.co/liuhaotian/llava-v1.6-mistral-7b" class="ext-link" style="font-size: 16px;">Link</a></td>
+                  <td>7B</td>
+                  <td>28.2</td>
+                  <td>30.6</td>
+                  <td>29.4</td>
+                  <td><b>29.4</b></td>            
+                </tr>
+                <tr>
+                  <td>15</td>
+                  <td><b>CogVLM-Chat</b></td>
+                  <td>LMM</td>
+                  <td><a href="https://huggingface.co/THUDM/cogvlm-chat-hf" class="ext-link" style="font-size: 16px;">Link</a></td>
+                  <td>7B</td>
+                  <td>28.9</td>
+                  <td>30.2</td>
+                  <td>28.5</td>
+                  <td><b>29.2</b></td>            
+                </tr>     
+                <tr>
+                  <td>16</td>
+                  <td><b>Qwen-VL-Chat</b></td>
+                  <td>LMM</td>
+                  <td><a href="https://huggingface.co/Qwen/Qwen-VL-Chat" class="ext-link" style="font-size: 16px;">Link</a></td>
+                  <td>7B</td>
+                  <td>29.7</td>
+                  <td>29.9</td>
+                  <td>27.1</td>
+                  <td><b>28.9</b></td>            
+                </tr>
+                <tr>
+                  <td>17</td>
+                  <td><b>LLaVA-NeXT-Vicuna-13B</b></td>
+                  <td>LMM</td>
+                  <td><a href="https://huggingface.co/liuhaotian/llava-v1.6-vicuna-13b" class="ext-link" style="font-size: 16px;">Link</a></td>
+                  <td>13B</td>
+                  <td>21.9</td>
+                  <td>30.9</td>
+                  <td>29.3</td>
+                  <td><b>27.4</b></td>            
+                </tr>
+                <tr>
+                  <td>18</td>
+                  <td><b>Mistral-Instruct-v0.2-7B + Caption</b></td>
+                  <td>Tool</td>
+                  <td><a href="https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.2" class="ext-link" style="font-size: 16px;">Link</a></td>
+                  <td>7B</td>
+                  <td>24.9</td>
+                  <td>24.9</td>
+                  <td>26.9</td>
+                  <td><b>25.6</b></td>            
+                </tr>
+                <tr>
+                  <td>19</td>
+                  <td><b>LLaVA-NeXT-Vicuna-7B</b></td>
+                  <td>LMM </td>
+                  <td><a href="https://huggingface.co/liuhaotian/llava-v1.6-vicuna-7b" class="ext-link" style="font-size: 16px;">Link</a></td>
+                  <td>7B</td>
+                  <td>11.8</td>
+                  <td>29.8</td>
+                  <td>28.2</td>
+                  <td><b>23.3</b></td>            
+                </tr>
+                <tr>
+                  <td>20</td>
+                  <td><b>InstructBLIP-Vicuna-7B</b></td>
+                  <td>LMM</td>
+                  <td><a href="https://huggingface.co/Salesforce/instructblip-vicuna-7b" class="ext-link" style="font-size: 16px;">Link</a></td>
+                  <td>7B</td>
+                  <td>13.7</td>
+                  <td>28.1</td>
+                  <td>19.7</td>
+                  <td><b>20.5</b></td>            
+                </tr>
+                <tr>
+                  <td>21</td>
+                  <td><b>InstructBLIP-Vicuna-13B</b></td>
+                  <td>LMM</td>
+                  <td><a href="https://huggingface.co/Salesforce/instructblip-vicuna-13b" class="ext-link" style="font-size: 16px;">Link</a></td>
+                  <td>13B</td>
+                  <td>10.5</td>
+                  <td>23.4</td>
+                  <td>18.6</td>
+                  <td><b>17.5</b></td>            
+                </tr>
+                <tr>
+                  <td>22</td>
+                  <td><b>Ying-VLM</b></td>
+                  <td>LMM</td>
+                  <td><a href="https://huggingface.co/MMInstruction/YingVLM" class="ext-link" style="font-size: 16px;">Link</a></td>
+                  <td>13B</td>
+                  <td>22.3</td>
+                  <td>11.2</td>
+                  <td>15.6</td>
+                  <td><b>16.4</b></td>            
+                </tr>
+                <tr>
+                  <td>23</td>
+                  <td><b>VisualGLM</b></td>
+                  <td>LMM </td>
+                  <td><a href="https://huggingface.co/THUDM/visualglm-6b" class="ext-link" style="font-size: 16px;">Link</a></td>
+                  <td>6B</td>
+                  <td>8.7</td>
+                  <td>22.4</td>
+                  <td>13.5</td>
+                  <td><b>14.9</b></td>            
+                </tr>     
+            </table>
+            <br>
+            <b>Method types:</b> <b>LMM 🖼️:</b> Large Multimodal Model, <b>Tool 🛠️:</b> Tool-augmented Large Language Model. The captions are generated by Gemini 1.0 Pro.
+            <br>
+            <div>
+            <p>🚨 The leaderboard is continuously being updated. To submit your results to the leaderboard, please send to <a> <href="hongyu.wang@vipl.ict.ac.cn">Hongyu Wang</a> and <a> <href="wangruiping@ict.ac.cn">Ruiping Wangg</a> with your result json files.
+              </p>
+            </div>
+            <div>
+              <p>🔮 The evaluation instructions are available at <a><href="https://github.com/M4U-Benchmark/m4u/tree/main?tab=readme-ov-file#-evaluations-on-m4u">Evaluations on M4U</a>.
+                </p>
+              </div>
+          </div>
+          
+        <div class="container">
+          <!-- Abstract. -->
+          <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+              <h2 class="title is-3">Qualitative Analysis</h2>
+              <div class="content has-text-justified">
+                <p>
+                  we conduct qualitative analysis for the results of GPT-4V with the chain-of-thought prompting. We randomly sample <b>75 questions (2.5%) from different disciplines of each language</b>. In these instances, GPT-4V has errors in responses and analysis in at least one language. We analyze the cause of these wrong cases, and divided them into <b>6</b> categories: perceptual error, lack of knowledge, reasoning error, textual understanding, annotation error and answer extraction error. <b>Perceptual error, lack of knowledge, and reasoning error</b> account for the major causes of failed cases (96% in Chinese, 95% in English, and 92% in German). GPT-4V tends to exhibit lack of knowledge on the Chinese part of <img src="static/images/logo_m4u.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>
+                  <span class="mathvista">M4U</span>, while reasoning errors are more likely to occur in German and English. These findings demonstrate that LMMs still have significant room for improvement, particularly in multilingual multimodal reasoning.
+                </p>
+                <div class="content has-text-centered">
+                  <img src="static/images/qualitative.png" alt="arithmetic reasoning" width="80%"/>
+                  <p> 
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--/ Abstract. -->
+      </div>
+      <div class="container">
+        <div class="columns is-centered m-6">
+          <div class="column is-full has-text-centered content">
+            <h2 class="title is-3">Visualization Examples</h2>
+            <div id="results-carousel" class="carousel results-carousel">
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <img src="static/images/1.png" alt="" width="60%"/>
+                </div>
+              </div>
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <img src="static/images/2.png" alt="" width="60%"/>
+                </div>
+              </div>
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <img src="static/images/3.png" alt="" width="60%"/>
+                </div>
+              </div>
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <img src="static/images/4.png" alt="" width="60%"/>
+                </div>
+              </div>
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <img src="static/images/5.png" alt="" width="60%"/>
+                </div>
+              </div>
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <img src="static/images/6.png" alt="" width="60%"/>
+                </div>
+              </div>
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <img src="static/images/7.png" alt="" width="60%"/>
+                </div>
+              </div>
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <img src="static/images/8.png" alt="" width="60%"/>
+                </div>
+              </div>
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <img src="static/images/9.png" alt="" width="60%"/>
+                </div>
+              </div>
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <img src="static/images/10.png" alt="" width="60%"/>
+                </div>
+              </div>
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <img src="static/images/11.png" alt="" width="60%"/>
+                </div>
+              </div>
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <img src="static/images/12.png" alt="" width="60%"/>
+                </div>
+              </div>
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <img src="static/images/13.png" alt="" width="60%"/>
+                </div>
+              </div>
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <img src="static/images/14.png" alt="" width="60%"/>
+                </div>
+              </div>
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <img src="static/images/15.png" alt="" width="60%"/>
+                </div>
+              </div>
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <img src="static/images/16.png" alt="" width="60%"/>
+                </div>
+              </div>
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <img src="static/images/17.png" alt="" width="60%"/>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </section>
+
+</body>
+</html>
