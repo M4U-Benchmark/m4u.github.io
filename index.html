@@ -179,12 +179,11 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              Multilingual multimodal reasoning is a core component in achieving human-level intelligence. However, most existing benchmarks for multilingual multimodal reasoning struggle to differentiate between models of varying performance; even language models without visual capabilities can easily achieve high scores. This leaves a comprehensive evaluation of leading multilingual multimodal models largely unexplored. In this work, we introduce <img src="static/images/logo_m4u.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>
+              Multilingual capability is an essential aspect for large multimodal models, since they are usually deployed across various countries and languages. However, most existing benchmarks for multilingual multimodal reasoning struggle to differentiate between models of varying performance; even language models without visual capabilities can easily achieve high scores. This leaves a comprehensive evaluation of leading multilingual multimodal models largely unexplored. In this work, we introduce <img src="static/images/logo_m4u.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>
               <span class="mathvista">M4U</span>, a novel and challenging benchmark for assessing the capability of multi-discipline multilingual multimodal understanding and reasoning. <img src="static/images/logo_m4u.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>
-              <span class="mathvista">M4U</span> contains 8,931 samples covering 64 disciplines across 16 subfields in Science, Engineering, and Healthcare in Chinese, English, and German. Using <img src="static/images/logo_m4u.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>
-              <span class="mathvista">M4U</span>, we conduct extensive evaluations of 21 leading Large Multimodal Models (LMMs) and Large Language Models (LLMs) with external tools. The evaluation results show that the state-of-the-art model, GPT-4o, achieves only 47.6% average accuracy on <img src="static/images/logo_m4u.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>
-              <span class="mathvista">M4U</span>. Additionally, we observe that the leading LMMs exhibit significant language preferences. Our in-depth analysis indicates that leading LMMs, including GPT-4o, suffer performance degradation when prompted with cross-lingual multimodal questions, such as images with key textual information in Chinese while the question is in German. We believe that <img src="static/images/logo_m4u.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>
-              <span class="mathvista">M4U</span> can serve as a crucial tool for systematically evaluating LMMs based on their multilingual multimodal reasoning capabilities and monitoring their development.   
+              <span class="mathvista">M4U</span> contains 10k samples covering 64 disciplines across 16 subfields in Science, Engineering, and Healthcare in six languages. Using <img src="static/images/logo_m4u.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>
+              <span class="mathvista">M4U</span>, we conduct extensive evaluations of leading Large Multimodal Models (LMMs) and Large Language Models (LLMs) with external tools. The evaluation results demonstrate that the state-of-the-art model, GPT-4o, achieves only 47.6% average accuracy on <img src="static/images/logo_m4u.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>
+              <span class="mathvista">M4U</span>. Additionally, we observe that the leading LMMs exhibit significant language preferences. Our in-depth analysis indicates that leading LMMs, including GPT-4o, struggle to perform reasoning using multilingual information present in both visual and textual context. Specifically, they suffer performance degradation when prompted with cross-lingual multimodal questions.        
             </p>
             <div class="content has-text-centered">
               <img src="static/images/overview.png" alt="arithmetic reasoning" width="80%"/>
@@ -218,14 +217,14 @@
           <h2 class="title is-3">Overview</h2>
           <div class="content has-text-justified">
             <div class="content has-text-centered">
-              <img src="static/images/stats.png" alt="arithmetic reasoning" width="80%"/>
+              <img src="static/images/statistics.png" alt="arithmetic reasoning" width="80%"/>
               <p> The detailed statistics of <img src="static/images/logo_m4u.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>
                 <span class="mathvista">M4U dataset</span>.
             </div>
             <p>
               To boost the development of multilingual multimodal models, in this work, we introduce  <img src="static/images/logo_m4u.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>
               <span class="mathvista">M4U</span>, a novel and challenging benchmark for evaluating foundation models on the expert-level multilingual multimodal understanding and reasoning. Specifically, we recruit a team of over 10 college students and graduate students to collect a high-quality data and assess its difficulty and correctness. <img src="static/images/logo_m4u.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>
-              <span class="mathvista">M4U</span> consists of<b> 8,931 multiple choice questions, covering 64 disciplines of 16 subfields from Science, Engineering and Healthcare in Chinese, English and German.</b>. To minimize the risk of data contamination, the samples are collected from college exams, the quizzes of online video lectures. Further a large portion <b> 35% </b> of  <img src="static/images/logo_m4u.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>
+              <span class="mathvista">M4U</span> consists of<b> 10005 multiple choice questions, covering 64 disciplines of 16 subfields from Science, Engineering and Healthcare</b>. To minimize the risk of data contamination, the samples are collected from college exams, the quizzes of online video lectures. Further a large portion <b> 35% </b> of  <img src="static/images/logo_m4u.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>
               <span class="mathvista">M4U</span> are written by our team according to the textbooks. 
             </p>
 
@@ -234,7 +233,7 @@
             </div>
             <p> 
               With  <img src="static/images/logo_m4u.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>
-              <span class="mathvista">M4U</span>, we conduct extensive evaluations for <b>21</b> leading LMMs and LLMs with external tools. The evaluation results show that the state-of-the-art model, <b>GPT-4o</b>, only achieves <b>47.6%</b> average accuracy on M4U. Besides, we observe that the <b>leading LMMs have significant language preferences</b>.
+              <span class="mathvista">M4U</span>, we conduct extensive evaluations for <b>22</b> leading LMMs and <b>4</b> LLMs with external tools. The evaluation results show that the state-of-the-art model, <b>GPT-4o</b>, only achieves <b>47.6%</b> average accuracy on M4U. Besides, we observe that the <b>leading LMMs have significant language preferences</b>.
             </p>
             <div class="content has-text-centered">
               <img src="static/images/cross_lingual.jpg" alt="arithmetic reasoning" width="80%"/>
@@ -270,7 +269,7 @@
     <div class="container">
       <div class="columns is-centered">
         <div class="column is-full has-text-centered content">
-          <h2 class="title is-3" id="leaderboard">Leaderboard</h2>
+          <h2 class="title is-3" id="leaderboard">Leaderboard on M4U</h2>
           <div class="content">
             <table class="js-sort-table" id="results">
                 <tr>
@@ -537,6 +536,164 @@
                   <td>13.5</td>
                   <td><b>14.9</b></td>            
                 </tr>     
+            </table>
+            <h2 class="title is-3" id="leaderboard">Leaderboard on M4U-mini</h2>
+          <div class="content">
+            <table class="js-sort-table" id="results">
+              <tr>
+                  <td class="js-sort-number"><strong>#</strong></td>
+                  <td class="js-sort-number"><strong>Model</strong></td>
+                  <td class="js-sort-number"><strong>Method</strong></td>
+                  <td class="js-sort-number"><strong>Source</strong></td>
+                  <td class="js-sort-number"><strong>Size</strong></td>
+                  <td class="js-sort-number"><strong>Chinese</strong></td>
+                  <td class="js-sort-number"><strong>English</strong></td>
+                  <td class="js-sort-number"><strong>German</strong></td>
+                  <td class="js-sort-number"><strong>Japanese</strong></td>
+                  <td class="js-sort-number"><strong>Arabic</strong></td>
+                  <td class="js-sort-number"><strong>Thai</strong></td>
+                  <td class="js-sort-number"><strong>Average</strong></td>
+              </tr>
+              <tr>			
+                <td>1</td>
+                <td><b>GPT-4o</b></td>
+                <td>LMM</td>
+                <td><a href="https://openai.com/" class="ext-link" style="font-size: 16px;">Link</a></td>
+                <td>-</td>
+                <td>53.7</td>
+                <td>44.9</td>
+                <td>42.4</td>
+                <td>49.1</td>
+                <td>45.2</td>
+                <td>48.8</td>
+                <td><b>47.3</b></td>            
+              </tr> 
+                <tr>
+                  <td>2</td>
+                  <td><b>InternVL2.5-26B</b></td>
+                  <td>LMM</td>
+                  <td><a href="https://huggingface.co/OpenGVLab/InternVL2_5-26B" class="ext-link" style="font-size: 16px;">Link</a></td>
+                  <td>26B</td>
+                  <td>51.3</td>
+                  <td>44.2</td>
+                  <td>48.1</td>
+                  <td>46.4</td>
+                  <td>37.6</td>
+                  <td>47.3</td>
+                  <td><b>44.2</b></td>            
+                </tr> 
+                <tr>
+                  <td>3</td>
+                  <td><b>Qwen2-VL-7B-Instruct</b></td>
+                  <td>LMM</td>
+                  <td><a href="https://huggingface.co/Qwen/Qwen2-VL-7B-Instruct" class="ext-link" style="font-size: 16px;">Link</a></td>
+                  <td>7B</td>
+                  <td>46.6</td>
+                  <td>43.5</td>
+                  <td>44.1</td>
+                  <td>47.6</td>
+                  <td>41.5</td>
+                  <td>41.4</td>
+                  <td><b>44.1</b></td>            
+                </tr> 
+                <tr>
+                  <td>4</td>
+                  <td><b>Gemini-1.5-Flash</b></td>
+                  <td>LMM</td>
+                  <td><a href="https://deepmind.google/technologies/gemini/flash/" class="ext-link" style="font-size: 16px;">Link</a></td>
+                  <td>-</td>
+                  <td>46.3</td>
+                  <td>35.4</td>
+                  <td>42.8</td>
+                  <td>39.0</td>
+                  <td>38.4</td>
+                  <td>40.1</td>
+                  <td><b>40.3</b></td>            
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td><b>InternVL2.5-8B</b></td>
+                  <td>LMM</td>
+                  <td><a href="https://huggingface.co/OpenGVLab/InternVL2_5-8B" class="ext-link" style="font-size: 16px;">Link</a></td>
+                  <td>8B</td>
+                  <td>38.5</td>
+                  <td>41.7</td>
+                  <td>38.3</td>
+                  <td>36.1</td>
+                  <td>31.4</td>
+                  <td>31.7</td>
+                  <td><b>36.3</b></td>            
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td><b>LLaVA-NeXT-34B</b></td>
+                  <td>LMM</td>
+                  <td><a href="https://huggingface.co/liuhaotian/llava-v1.6-34b" class="ext-link" style="font-size: 16px;">Link</a></td>
+                  <td>34B</td>
+                  <td>44.2</td>
+                  <td>44.1</td>
+                  <td>39.0</td>
+                  <td>36.0</td>
+                  <td>11.4</td>
+                  <td>34.0</td>
+                  <td><b>34.8</b></td>            
+                </tr>
+                <tr>
+                  <td>7</td>
+                  <td><b>Phi-3.5-Vision-Instruct</b></td>
+                  <td>LMM</td>
+                  <td><a href="https://huggingface.co/microsoft/Phi-3.5-vision-instruct" class="ext-link" style="font-size: 16px;">Link</a></td>
+                  <td>4.2B</td>
+                  <td>27.2</td>
+                  <td>34.3</td>
+                  <td>33.4</td>
+                  <td>30.4</td>
+                  <td>31.7</td>
+                  <td>30.9</td>
+                  <td><b>31.3</b></td>            
+                </tr>   
+                <tr>
+                  <td>8</td>
+                  <td><b>DeepSeek-VL-Chat</b></td>
+                  <td>LMM </td>
+                  <td><a href="https://huggingface.co/deepseek-ai/deepseek-vl-7b-chat" class="ext-link" style="font-size: 16px;">Link</a></td>
+                  <td>7B</td>
+                  <td>33.6</td>
+                  <td>35.4</td>
+                  <td>35.0</td>
+                  <td>32.1</td>
+                  <td>24.8</td>
+                  <td>25.4</td>
+                  <td><b>31.0</b></td>            
+                </tr>
+                <tr>
+                  <td>9</td>
+                  <td><b>Qwen2.5-14B-Instruct</b></td>
+                  <td>Tool</td>
+                  <td><a href="https://huggingface.co/Qwen/Qwen2.5-14B-Instruct" class="ext-link" style="font-size: 16px;">Link</a></td>
+                  <td>14B</td>
+                  <td>25.7</td>
+                  <td>35.0</td>
+                  <td>25.7</td>
+                  <td>13.6</td>
+                  <td>35.7</td>
+                  <td>13.8</td>
+                  <td><b>24.9</b></td>            
+                </tr>   
+                <tr>
+                  <td>10</td>
+                  <td><b>Qwen1.5-14B-Chat</b></td>
+                  <td>Tool</td>
+                  <td><a href="https://huggingface.co/Qwen/Qwen1.5-14B-Chat" class="ext-link" style="font-size: 16px;">Link</a></td>
+                  <td>14B</td>
+                  <td>17.7</td>
+                  <td>28.9</td>
+                  <td>29.5</td>
+                  <td>19.3</td>
+                  <td>26.9</td>
+                  <td>12.0</td>
+                  <td><b>22.4</b></td>            
+                </tr>
             </table>
             <br>
             <b>Method types:</b> <b>LMM 🖼️:</b> Large Multimodal Model, <b>Tool 🛠️:</b> Tool-augmented Large Language Model. The captions are generated by Gemini 1.0 Pro.
